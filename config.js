@@ -1,5 +1,5 @@
 const CONFIG = {
-    COURSE_URL: 'https://members.codewithmosh.com/courses/spring-boot-mastering-apis/lectures/60988575',
+    COURSE_URL: 'https://members.codewithmosh.com/courses/complete-sql-mastery-1/lectures/9590107',
     COURSE_JSON_PATH: './course.json',
     DOWNLOAD_DIR: './downloads',
     DOWNLOAD_TMP: './downloads/__tmp',

@@ -10,12 +10,33 @@ const {
   PREVIEW_ONLY,
   COURSE_JSON_PATH,
   CHROME_EXECUTABLE,
-  CHROME_PROFILE_DIR
+  CHROME_PROFILE_DIR,
+  PROGRESS_PATH
 } = CONFIG;
 
 function sanitize(name) {
   if (!name || typeof name !== 'string') return 'unnamed';
   return name.replace(/[\\/:*?"<>|]/g, '').trim();
+}
+
+function loadProgress() {
+  try {
+    return JSON.parse(fs.readFileSync(PROGRESS_PATH, 'utf-8'));
+  } catch {
+    return {};
+  }
+}
+
+function saveProgress(progress) {
+  fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2));
+}
+
+function updateProgress(progress, section, lectureTitle) {
+  if (!progress[section]) progress[section] = [];
+  if (!progress[section].includes(lectureTitle)) {
+    progress[section].push(lectureTitle);
+    saveProgress(progress);
+  }
 }
 
 async function waitForDownload(dir, beforeFiles, timeout = 30000) {
@@ -32,6 +53,8 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
 
 (async () => {
   const courseJson = JSON.parse(fs.readFileSync(COURSE_JSON_PATH, 'utf-8'));
+  const progress = loadProgress();
+
   if (!fs.existsSync(DOWNLOAD_TMP)) fs.mkdirSync(DOWNLOAD_TMP, { recursive: true });
 
   const browser = await puppeteer.launch({
@@ -51,7 +74,8 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
   }
 
   for (const section of courseJson) {
-    const sectionPath = path.join(DOWNLOAD_DIR, sanitize(section.section));
+    const sectionTitle = sanitize(section.section);
+    const sectionPath = path.join(DOWNLOAD_DIR, sectionTitle);
     if (!fs.existsSync(sectionPath) && !PREVIEW_ONLY) fs.mkdirSync(sectionPath, { recursive: true });
 
     console.log(`\n📂 Section: "${section.section}"`);
@@ -61,6 +85,11 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
       const cleanTitle = sanitize(lecture.title);
       const lectureTitle = `${i + 1}- ${cleanTitle}.mp4`;
       const lectureUrl = lecture.url;
+
+      if (progress[section.section]?.includes(lectureTitle)) {
+        console.log(`⏩ Already downloaded: ${lectureTitle}`);
+        continue;
+      }
 
       try {
         console.log(`🔍 Navigating to: ${lectureUrl}`);
@@ -81,6 +110,8 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
         const newPath = path.join(sectionPath, lectureTitle);
         fs.renameSync(oldPath, newPath);
         console.log(`✅ Renamed to: ${lectureTitle}`);
+
+        updateProgress(progress, section.section, lectureTitle);
 
       } catch (err) {
         console.error(`💥 Error in "${lecture.title}": ${err.message}`);
