@@ -1,0 +1,363 @@
+[
+  {
+    "section": "Introduction (5m)",
+    "lectures": [
+      {
+        "title": "1- Welcome (1:12)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60162299"
+      },
+      {
+        "title": "2- Prerequisites (0:50)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123877"
+      },
+      {
+        "title": "3- Course Structure (1:43)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123875"
+      },
+      {
+        "title": "4- Source Code (1:16)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123876"
+      },
+      {
+        "title": "5- Questions and Support",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124948"
+      },
+      {
+        "title": "6- Connect with Me",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124947"
+      }
+    ]
+  },
+  {
+    "section": "Getting Started with Spring Boot (40m)",
+    "lectures": [
+      {
+        "title": "1- Introduction (0:50)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123977"
+      },
+      {
+        "title": "2- Introduction to Spring Boot (2:41)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123968"
+      },
+      {
+        "title": "3- Setting up the Development Environment (3:25)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123972"
+      },
+      {
+        "title": "4- Creating a Spring Boot Project (3:43)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123973"
+      },
+      {
+        "title": "5- Understanding the Project Structure (3:58)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123969"
+      },
+      {
+        "title": "6- Dependency Management (7:51)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123970"
+      },
+      {
+        "title": "7- Building Your First Spring Controller (4:13)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123976"
+      },
+      {
+        "title": "8- Running Spring Boot Applications (2:24)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123975"
+      },
+      {
+        "title": "9- Debugging Spring Boot Applications (5:54)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123974"
+      },
+      {
+        "title": "10- Automatic Restarts with Spring Boot DevTools (3:37)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123971"
+      },
+      {
+        "title": "11- Configuring Application Properties (2:37)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60123978"
+      },
+      {
+        "title": "12- Summary",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124108"
+      }
+    ]
+  },
+  {
+    "section": "Dependency Injection (60m)",
+    "lectures": [
+      {
+        "title": "1- Introduction (1:01)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124136"
+      },
+      {
+        "title": "2- What is Dependency Injection? (7:42)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124132"
+      },
+      {
+        "title": "3- Constructor Injection (4:54)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124143"
+      },
+      {
+        "title": "4- Setter Injection (2:39)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124133"
+      },
+      {
+        "title": "5- The Spring IoC Container (2:52)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124138"
+      },
+      {
+        "title": "6- Configuring Beans Using Annotations (5:01)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124137"
+      },
+      {
+        "title": "7- Controlling Bean Selection (2:56)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124141"
+      },
+      {
+        "title": "8- Exerise- Implementing a Notification Service (4:26)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124135"
+      },
+      {
+        "title": "9- Externalizing Configuration (7:30)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124140"
+      },
+      {
+        "title": "10- Configuring Beans Using Code (6:31)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124130"
+      },
+      {
+        "title": "11- Lazy Initialization (3:12)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124139"
+      },
+      {
+        "title": "12- Bean Scopes (2:30)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124142"
+      },
+      {
+        "title": "13- Bean Lifecycle Hooks (3:58)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124131"
+      },
+      {
+        "title": "14- Exercise- Implementing a User Registration Service (5:47)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124134"
+      },
+      {
+        "title": "15- Summary",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124144"
+      }
+    ]
+  },
+  {
+    "section": "Database Integration with Spring Data JPA (4h)",
+    "lectures": [
+      {
+        "title": "1- Introduction (2:03)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124798"
+      },
+      {
+        "title": "2- JDBC, JPA, Spring Data JPA (4:08)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124809"
+      },
+      {
+        "title": "3- Setting Up MySQL (1:52)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124786"
+      },
+      {
+        "title": "4- Setting Up Spring Data JPA (3:23)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124779"
+      },
+      {
+        "title": "5- Designing the Application Model (2:49)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124792"
+      },
+      {
+        "title": "6- Creating the Database (0:56)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124817"
+      },
+      {
+        "title": "6.1- Creating Database Tables (5:49)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124787"
+      },
+      {
+        "title": "6.2- Database Migrations with Flyway (4:52)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124802"
+      },
+      {
+        "title": "6.3- Chaning the Database Schema (5:02)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124796"
+      },
+      {
+        "title": "6.4- Running Migrations Using Maven (5:17)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124783"
+      },
+      {
+        "title": "6.5- Exercise- Creating the Profiles, and Tags Tables (4:55)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124808"
+      },
+      {
+        "title": "7- Creating the Domain Model (0:49)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124794"
+      },
+      {
+        "title": "7.1- Defining Entities (5:58)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124807"
+      },
+      {
+        "title": "7.2- Simplifying Code with Lombok (5:54)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124815"
+      },
+      {
+        "title": "7.3- Exercise- Defining the Address, Profile and Tag Entities (2:39)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124803"
+      },
+      {
+        "title": "7.4 - Defining One-To-Many Relationships (9:22)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124780"
+      },
+      {
+        "title": "7.5- Defining Many-to-Many Relationships (7:36)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124774"
+      },
+      {
+        "title": "7.6- Defining One-to-One Relationships (4:48)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124812"
+      },
+      {
+        "title": "7.7- Exercise- Creating the Category and Product Entities (3:28)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124772"
+      },
+      {
+        "title": "7.8- Generating Entities Using JPA Buddy (5:37)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124778"
+      },
+      {
+        "title": "7.9- Model First with JPA Buddy (7:39)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124782"
+      },
+      {
+        "title": "7.10- Exercise- Creating the Wishlist Table (4:31)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124799"
+      },
+      {
+        "title": "7.11- Generating Database Tables with Hibernate (4:38)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124789"
+      },
+      {
+        "title": "8- Creating Repositories (1:06)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124814"
+      },
+      {
+        "title": "8.1- Defining Repositories (4:35)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124773"
+      },
+      {
+        "title": "8.2- Using Repositories (6:18)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124801"
+      },
+      {
+        "title": "8.3- Understanding Entity States (2:08)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124797"
+      },
+      {
+        "title": "8.4- Managing Transactions (7:03)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124776"
+      },
+      {
+        "title": "8.5- Fetching Strategies- Eager and Lazy Loading (8:24)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124805"
+      },
+      {
+        "title": "8.6- Exercise- Understanding Fetching Strategies (4:02)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124818"
+      },
+      {
+        "title": "8.7- Persisting Related Entities (3:17)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124804"
+      },
+      {
+        "title": "8.8- Deleting Related Entities (10:08)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124813"
+      },
+      {
+        "title": "8.9- Exercise- Managing Products and Wishlists (11:48)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124800"
+      },
+      {
+        "title": "9- Writing Custom Queries (0:57)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124790"
+      },
+      {
+        "title": "9.1- Derived Query Methods (5:24)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124806"
+      },
+      {
+        "title": "9.2- Writing Custom Queries Using @Query (8:53)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124784"
+      },
+      {
+        "title": "9.3- Fetching Partial Data with Projections (8:08)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124775"
+      },
+      {
+        "title": "9.4- Efficiently Loading Entities with @EntityGraph (6:38)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124781"
+      },
+      {
+        "title": "9.5- Avoiding the N+1 Problem (5:21)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124816"
+      },
+      {
+        "title": "9.6- Calling Stored Procedures (6:54)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124811"
+      },
+      {
+        "title": "9.7- Exercise- Writing Custom Queries (8:50)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124777"
+      },
+      {
+        "title": "10- Writing Dynamic Queries (1:09)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124795"
+      },
+      {
+        "title": "10.1- Query by Example (6:03)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124793"
+      },
+      {
+        "title": "10.2- Dynamic Queries Using Criteria API (9:59)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124785"
+      },
+      {
+        "title": "10.3- Composable Queries Using Specifications API (7:20)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124810"
+      },
+      {
+        "title": "10.4- Sorting and Pagination (6:18)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124788"
+      },
+      {
+        "title": "10.5- Exercise- Writing Dynamic Queries",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124903"
+      },
+      {
+        "title": "11- Summary",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124828"
+      }
+    ]
+  },
+  {
+    "section": "Course Wrap Up",
+    "lectures": [
+      {
+        "title": "1- What's Next (1:27)",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60124791"
+      },
+      {
+        "title": "2- Spring Boot - Part 2",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60162658"
+      },
+      {
+        "title": "3- Feedback",
+        "url": "https://members.codewithmosh.com/courses/spring-boot-mastering-fundamentals/lectures/60277649"
+      }
+    ]
+  }
+]

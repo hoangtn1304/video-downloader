@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Output folders
+downloads/
+*.mp4
+
+# Puppeteer session data
+chrome-user-data/
+
+# Logs and summaries
+*.log
+download_summary.json
+download_summary.csv
+
+# macOS system files
+.DS_Store
+
+# dotenv files (if added later)
+.env
+.env.local
