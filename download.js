@@ -1,12 +1,17 @@
+// download.js
 import fs from 'fs';
 import path from 'path';
 import puppeteer from 'puppeteer-core';
-import os from 'os';
+import CONFIG from './config.js';
 
-const DOWNLOAD_ROOT = path.resolve('./downloads');
-const DOWNLOAD_TMP = path.join(DOWNLOAD_ROOT, '__tmp');
-const PREVIEW_ONLY = false; // Toggle to true to test without downloading
-const courseJson = JSON.parse(fs.readFileSync('./course.json', 'utf-8'));
+const {
+  DOWNLOAD_DIR,
+  DOWNLOAD_TMP,
+  PREVIEW_ONLY,
+  COURSE_JSON_PATH,
+  CHROME_EXECUTABLE,
+  CHROME_PROFILE_DIR
+} = CONFIG;
 
 function sanitize(name) {
   if (!name || typeof name !== 'string') return 'unnamed';
@@ -26,15 +31,17 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
 }
 
 (async () => {
+  const courseJson = JSON.parse(fs.readFileSync(COURSE_JSON_PATH, 'utf-8'));
   if (!fs.existsSync(DOWNLOAD_TMP)) fs.mkdirSync(DOWNLOAD_TMP, { recursive: true });
 
   const browser = await puppeteer.launch({
     headless: false,
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    userDataDir: './chrome-user-data'
+    executablePath: CHROME_EXECUTABLE,
+    userDataDir: CHROME_PROFILE_DIR
   });
 
   const page = await browser.newPage();
+
   if (!PREVIEW_ONLY) {
     const client = await page.target().createCDPSession();
     await client.send('Page.setDownloadBehavior', {
@@ -44,9 +51,8 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
   }
 
   for (const section of courseJson) {
-    const sectionPath = path.join(DOWNLOAD_ROOT, sanitize(section.section));
-    if (!fs.existsSync(sectionPath) && !PREVIEW_ONLY)
-      fs.mkdirSync(sectionPath, { recursive: true });
+    const sectionPath = path.join(DOWNLOAD_DIR, sanitize(section.section));
+    if (!fs.existsSync(sectionPath) && !PREVIEW_ONLY) fs.mkdirSync(sectionPath, { recursive: true });
 
     console.log(`\n📂 Section: "${section.section}"`);
 
