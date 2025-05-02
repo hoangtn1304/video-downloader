@@ -2,18 +2,16 @@
 
 This tool allows you to automatically download lecture videos from internet using Puppeteer and Chrome.
 
-## Features
+## ✅ Features
 
-✅ Auto-detects and logs in using persistent session  
-✅ Crawls course sections and lectures into `course.json`  
-✅ Supports preview mode (no download)  
-✅ Downloads videos and saves them into structured folders by section  
-✅ Renames videos using lecture titles  
-✅ Displays progress bars and file size while downloading  
-✅ Generates:
-- `downloaded.log`: Successfully downloaded videos
-- `skipped.log`: Skipped lectures
-- `errors.log`: Failures or exceptions during execution
+- ✔ Organizes videos into section folders
+- ✔ Renames each video to match lecture titles
+- ✔ Supports login persistence with `userDataDir`
+- ✔ Preview-only mode (no downloading) for safe dry runs
+- ✔ Retry logic for robustness
+- ✔ Auto-generates download summary logs (`.log`, `.txt`, `.json`)
+- ✔ Atomic renaming: download → rename → move to folder
+- ✔ Visual progress with ✅/💥/⏩ indicators
 
 ---
 
