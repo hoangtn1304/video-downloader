@@ -31,10 +31,10 @@ function saveProgress(progress) {
   fs.writeFileSync(PROGRESS_PATH, JSON.stringify(progress, null, 2));
 }
 
-function updateProgress(progress, section, lectureTitle) {
-  if (!progress[section]) progress[section] = [];
-  if (!progress[section].includes(lectureTitle)) {
-    progress[section].push(lectureTitle);
+function updateProgress(progress, sectionKey, lectureKey) {
+  if (!progress[sectionKey]) progress[sectionKey] = [];
+  if (!progress[sectionKey].includes(lectureKey)) {
+    progress[sectionKey].push(lectureKey);
     saveProgress(progress);
   }
 }
@@ -73,21 +73,25 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
     });
   }
 
-  for (const section of courseJson) {
-    const sectionTitle = sanitize(section.section);
-    const sectionPath = path.join(DOWNLOAD_DIR, sectionTitle);
+  const pad = (num, len = 2) => String(num).padStart(len, '0');
+
+  for (let s = 0; s < courseJson.length; s++) {
+    const section = courseJson[s];
+    const sectionKey = sanitize(section.section);
+    const sectionDirName = `${pad(s + 1)}- ${sectionKey}`;
+    const sectionPath = path.join(DOWNLOAD_DIR, sectionDirName);
     if (!fs.existsSync(sectionPath) && !PREVIEW_ONLY) fs.mkdirSync(sectionPath, { recursive: true });
 
-    console.log(`\n📂 Section: "${section.section}"`);
+    console.log(`\n📂 Section: "${sectionDirName}"`);
 
     for (let i = 0; i < section.lectures.length; i++) {
       const lecture = section.lectures[i];
       const cleanTitle = sanitize(lecture.title);
-      const lectureTitle = `${i + 1}- ${cleanTitle}.mp4`;
+      const lectureKey = `${pad(i + 1)}- ${cleanTitle}.mp4`;
       const lectureUrl = lecture.url;
 
-      if (progress[section.section]?.includes(lectureTitle)) {
-        console.log(`⏩ Already downloaded: ${lectureTitle}`);
+      if (progress[sectionKey]?.includes(lectureKey)) {
+        console.log(`⏩ Already downloaded: ${lectureKey}`);
         continue;
       }
 
@@ -97,21 +101,26 @@ async function waitForDownload(dir, beforeFiles, timeout = 30000) {
 
         if (PREVIEW_ONLY) {
           const videoLink = await page.$eval('a.download', el => el.href);
-          console.log(`✅ Preview: ${lectureTitle} → ${videoLink}`);
+          console.log(`✅ Preview: ${lectureKey} → ${videoLink}`);
           continue;
         }
 
+        const downloadBtn = await page.$('a.download');
+        if (!downloadBtn) {
+          throw new Error('No element found for selector: a.download');
+        }
+
         const before = fs.readdirSync(DOWNLOAD_TMP);
-        console.log(`⬇ Downloading: ${lectureTitle}`);
-        await page.click('a.download');
+        console.log(`⬇ Downloading: ${lectureKey}`);
+        await downloadBtn.click();
 
-        const newFile = await waitForDownload(DOWNLOAD_TMP, before);
-        const oldPath = path.join(DOWNLOAD_TMP, newFile);
-        const newPath = path.join(sectionPath, lectureTitle);
+        const downloaded = await waitForDownload(DOWNLOAD_TMP, before);
+        const oldPath = path.join(DOWNLOAD_TMP, downloaded);
+        const newPath = path.join(sectionPath, lectureKey);
+
         fs.renameSync(oldPath, newPath);
-        console.log(`✅ Renamed to: ${lectureTitle}`);
-
-        updateProgress(progress, section.section, lectureTitle);
+        console.log(`✅ Renamed to: ${lectureKey}`);
+        updateProgress(progress, sectionKey, lectureKey);
 
       } catch (err) {
         console.error(`💥 Error in "${lecture.title}": ${err.message}`);
